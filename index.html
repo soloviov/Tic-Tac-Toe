@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10"></script>
+    <!-- script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script -->
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <noscript>
+        <strong>We're sorry but tic-tac-toe doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app">
+        <select v-model="gameMode">
+            <option v-for="(item, i) in gameModes" :key="i" :value="item.value">{{ item.label }}</option>
+        </select>
+        <div class="filed">
+            <button v-for="(item, i) in items" :key="i" class="cell" @click="clickBtn(i)">{{ item }}</button>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
